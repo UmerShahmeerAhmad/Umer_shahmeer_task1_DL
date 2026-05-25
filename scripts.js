@@ -52,13 +52,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const ctaButton = document.getElementById('ctaBtn');
 
 ctaButton.addEventListener('click', () => {
-    // Create a toast notification
     showToast('🚀 Welcome Umer! Start building responsive interfaces.');
 });
 
-// ========== TOAST NOTIFICATION FUNCTION ==========
 function showToast(message) {
-    // Create toast element
     const toast = document.createElement('div');
     toast.textContent = message;
     toast.style.position = 'fixed';
@@ -75,14 +72,12 @@ function showToast(message) {
     
     document.body.appendChild(toast);
     
-    // Remove after 3 seconds
     setTimeout(() => {
         toast.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => toast.remove(), 300);
     }, 3000);
 }
 
-// Add animation styles dynamically
 const style = document.createElement('style');
 style.textContent = `
     @keyframes slideIn {
@@ -109,7 +104,6 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// ========== ACTIVE NAVIGATION HIGHLIGHT ==========
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.nav-links li a');
@@ -131,7 +125,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Add active style
 const activeStyle = document.createElement('style');
 activeStyle.textContent = `
     .nav-links li a.active {
@@ -141,7 +134,6 @@ activeStyle.textContent = `
 `;
 document.head.appendChild(activeStyle);
 
-// ========== WELCOME CONSOLE MESSAGE ==========
 console.log('%c🚀Industrial Training Kit', 'color: #7c6e65; font-size: 16px; font-weight: bold;');
 console.log('%c✓ Dark Mode Toggle Enabled', 'color: green;');
 console.log('%c✓ Responsive Hamburger Menu', 'color: green;');
