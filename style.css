@@ -42,7 +42,6 @@ body.dark-mode {
   --footer-text: #b0a090;
 }
 
-/* ========== RESET & BASE ========== */
 * {
   margin: 0;
   padding: 0;
@@ -50,7 +49,7 @@ body.dark-mode {
 }
 
 html {
-  scroll-behavior: smooth; /* Smooth scrolling for all anchors */
+  scroll-behavior: smooth; 
 }
 
 body {
@@ -61,7 +60,6 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ========== CSS GRID PAGE LAYOUT ========== */
 .grid-container {
   display: grid;
   grid-template-areas:
@@ -88,7 +86,6 @@ footer {
   grid-area: footer;
 }
 
-/* ========== DARK MODE TOGGLE BUTTON ========== */
 .theme-toggle {
   position: fixed;
   bottom: 20px;
@@ -111,7 +108,6 @@ footer {
   background: var(--button-hover);
 }
 
-/* ========== HEADER & NAVIGATION ========== */
 header {
   background: var(--header-bg);
   padding: var(--spacing-md);
@@ -132,7 +128,6 @@ nav {
   font-size: 1.5rem;
 }
 
-/* Navigation Links - Desktop */
 .nav-links {
   display: flex;
   gap: var(--spacing-lg);
@@ -150,7 +145,6 @@ nav {
   color: var(--footer-text);
 }
 
-/* ========== HAMBURGER MENU (Mobile) ========== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -167,7 +161,6 @@ nav {
   border-radius: 2px;
 }
 
-/* Hamburger Animation (when active) */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -180,7 +173,6 @@ nav {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* ========== HERO SECTION ========== */
 .hero {
   background: var(--hero-bg);
   padding: var(--spacing-xl);
