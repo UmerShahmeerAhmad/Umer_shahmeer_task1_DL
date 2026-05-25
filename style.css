@@ -211,7 +211,6 @@ button:hover {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* ========== FEATURES SECTION ========== */
 .features, .philosophy {
   margin-bottom: var(--spacing-lg);
 }
@@ -222,7 +221,6 @@ h2 {
   text-align: center;
 }
 
-/* Feature Grid - Responsive */
 .feature-grid, .philosophy-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -247,7 +245,6 @@ h2 {
   font-size: 1.3rem;
 }
 
-/* ========== FOOTER ========== */
 footer {
   background: var(--footer-bg);
   color: var(--footer-text);
@@ -268,9 +265,6 @@ footer hr {
   border-color: var(--border-color);
 }
 
-/* ========== MEDIA QUERIES ========== */
-
-/* Tablet and up (768px) */
 @media (min-width: 768px) {
   .grid-container {
     padding: var(--spacing-lg);
@@ -281,8 +275,6 @@ footer hr {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-/* Desktop (1024px and up) */
 @media (min-width: 1024px) {
   .grid-container {
     padding: var(--spacing-xl);
@@ -298,7 +290,6 @@ footer hr {
   }
 }
 
-/* Mobile (max 768px) - Hamburger Menu */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -332,7 +323,6 @@ footer hr {
   }
 }
 
-/* Small mobile adjustments */
 @media (max-width: 480px) {
   .feature-grid, .philosophy-grid {
     grid-template-columns: 1fr;
