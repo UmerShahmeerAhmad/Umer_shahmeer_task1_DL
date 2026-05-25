@@ -66,5 +66,3 @@ Open `index.html` directly in any modern browser — no build step or server req
 - **JavaScript (Vanilla ES6+)** – DOM manipulation, event handling, localStorage API, Intersection Observer alternative (scroll events)
 
 ---
-
-## 📁 Project Structure
