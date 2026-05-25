@@ -1,0 +1,362 @@
+/* ========== CSS VARIABLES (Light Mode Default) ========== */
+:root {
+  /* Colors - Light Theme */
+  --bg-primary: #fefaf5;
+  --bg-secondary: #ffffff;
+  --text-primary: #1e1b1a;
+  --text-secondary: #5e5b58;
+  --header-bg: #2c2a29;
+  --header-text: #ffffff;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0,0,0,0.05);
+  --hero-bg: #e9e0d5;
+  --button-bg: #7c6e65;
+  --button-hover: #5e4f45;
+  --border-color: #e0d6cc;
+  --footer-bg: #2c2a29;
+  --footer-text: #e6d5c3;
+  
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+}
+
+/* ========== DARK MODE VARIABLES ========== */
+body.dark-mode {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #e4e4e4;
+  --text-secondary: #b0b0b0;
+  --header-bg: #0d0d0d;
+  --header-text: #e6d5c3;
+  --card-bg: #2d2d2d;
+  --card-shadow: rgba(0,0,0,0.3);
+  --hero-bg: #2a2420;
+  --button-bg: #5e4f45;
+  --button-hover: #7c6e65;
+  --border-color: #404040;
+  --footer-bg: #0d0d0d;
+  --footer-text: #b0a090;
+}
+
+/* ========== RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for all anchors */
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========== CSS GRID PAGE LAYOUT ========== */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+/* ========== DARK MODE TOGGLE BUTTON ========== */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--button-bg);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: var(--button-hover);
+}
+
+/* ========== HEADER & NAVIGATION ========== */
+header {
+  background: var(--header-bg);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  color: var(--footer-text);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Navigation Links - Desktop */
+.nav-links {
+  display: flex;
+  gap: var(--spacing-lg);
+  list-style: none;
+}
+
+.nav-links li a {
+  color: var(--header-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-links li a:hover {
+  color: var(--footer-text);
+}
+
+/* ========== HAMBURGER MENU (Mobile) ========== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--header-text);
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Hamburger Animation (when active) */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ========== HERO SECTION ========== */
+.hero {
+  background: var(--hero-bg);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+  transition: background-color 0.3s ease;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: var(--text-secondary);
+}
+
+button {
+  background: var(--button-bg);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-xl);
+  margin-top: var(--spacing-md);
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* ========== FEATURES SECTION ========== */
+.features, .philosophy {
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Feature Grid - Responsive */
+.feature-grid, .philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.card, .philosophy-card {
+  background: var(--card-bg);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 10px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover, .philosophy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+.card h3, .philosophy-card h3 {
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.3rem;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+footer hr {
+  margin: var(--spacing-md) 0;
+  border-color: var(--border-color);
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablet and up (768px) */
+@media (min-width: 768px) {
+  .grid-container {
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
+  }
+  
+  .feature-grid, .philosophy-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .grid-container {
+    padding: var(--spacing-xl);
+    gap: var(--spacing-xl);
+  }
+  
+  .feature-grid, .philosophy-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .hero {
+    padding: 4rem;
+  }
+}
+
+/* Mobile (max 768px) - Hamburger Menu */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: var(--header-bg);
+    text-align: center;
+    transition: 0.3s;
+    padding: var(--spacing-lg) 0;
+    gap: var(--spacing-md);
+    z-index: 99;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+  
+  .nav-links.active {
+    top: 70px;
+  }
+  
+  .nav-links li {
+    margin: var(--spacing-sm) 0;
+  }
+  
+  .grid-container {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .feature-grid, .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero {
+    padding: var(--spacing-lg);
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
