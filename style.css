@@ -1,6 +1,4 @@
-/* ========== CSS VARIABLES (Light Mode Default) ========== */
 :root {
-  /* Colors - Light Theme */
   --bg-primary: #fefaf5;
   --bg-secondary: #ffffff;
   --text-primary: #1e1b1a;
@@ -16,20 +14,17 @@
   --footer-bg: #2c2a29;
   --footer-text: #e6d5c3;
   
-  /* Spacing */
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
   
-  /* Border Radius */
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --radius-xl: 2rem;
 }
 
-/* ========== DARK MODE VARIABLES ========== */
 body.dark-mode {
   --bg-primary: #1a1a1a;
   --bg-secondary: #2d2d2d;
